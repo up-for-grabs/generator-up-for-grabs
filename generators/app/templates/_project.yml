@@ -1,0 +1,8 @@
+name: <%= name %>
+desc: <%= desc %>
+site: <%= site %>
+tags:<% for(var i = 0; i < tags.length; i++) { %>
+- <%= tags[i] %><% } %>
+upforgrabs:
+  name: <%= label %>
+  link: <%= link %>

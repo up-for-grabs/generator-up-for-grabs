@@ -1,0 +1,39 @@
+{
+  "name": "generator-up-for-grabs",
+  "version": "0.0.1",
+  "description": "Yeoman generator",
+  "license": "MIT",
+  "main": "app/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ChrisMissal/generator-up-for-grabs"
+  },
+  "author": "Chris Missal <chris.missal@gmail.com> (http://chrismissal.com)",
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "open source",
+    "oss",
+    "up-for-grabs",
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^0.19.0",
+    "chalk": "^1.0.0",
+    "yosay": "^1.0.2"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "bugs": {
+    "url": "https://github.com/ChrisMissal/generator-up-for-grabs/issues"
+  },
+  "homepage": "https://github.com/ChrisMissal/generator-up-for-grabs",
+  "directories": {
+    "test": "test"
+  }
+}
