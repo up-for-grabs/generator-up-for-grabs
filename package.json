@@ -1,7 +1,7 @@
 {
   "name": "generator-up-for-grabs",
   "version": "0.0.1",
-  "description": "Yeoman generator",
+  "description": "Yeoman generator for Up-For-Grabs.net data files.",
   "license": "MIT",
   "main": "app/index.js",
   "repository": {
