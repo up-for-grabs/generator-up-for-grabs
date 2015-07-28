@@ -40,15 +40,17 @@ module.exports = yeoman.generators.Base.extend({
     }];
 
     this.prompt(prompts, function (props) {
+      var tags = props.tags || '';
       this.props = props;
-      this.props.tags = props.tags.split(/,?\s+/);
+      this.props.tags = tags.split(/,?\s+/);
       done();
     }.bind(this));
   },
 
   writing: {
     app: function () {
-      var filename = this.props.name.toLowerCase().replace(/[^\w ]+/g,'').replace(/ +/g,'-');
+      var name = this.props.name || '',
+          filename = name.toLowerCase().replace(/[^\w ]+/g,'').replace(/ +/g,'-');
       this.fs.copyTpl(
         this.templatePath('_project.yml'),
         this.destinationPath(filename + '.yml'),
