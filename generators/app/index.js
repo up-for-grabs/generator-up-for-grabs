@@ -42,7 +42,10 @@ module.exports = yeoman.generators.Base.extend({
     this.prompt(prompts, function (props) {
       var tags = props.tags || '';
       this.props = props;
-      this.props.tags = tags.split(/,?\s+/);
+      this.props.tags = tags.split(',');
+      this.props.tags.forEach(function (tag, index, tagsArray){
+        tagsArray[index] = tag.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+      });
       done();
     }.bind(this));
   },
