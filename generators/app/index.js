@@ -36,16 +36,21 @@ module.exports = yeoman.generators.Base.extend({
     }, {
       type: 'input',
       name: 'tags',
-      message: 'Project tags (comma separated)'
+      message: 'Project tags (comma separated. Allowed characters are: a-z, 0-9, +, -, # and .)'
     }];
 
     this.prompt(prompts, function (props) {
       var tags = props.tags || '';
       this.props = props;
       this.props.tags = tags.split(',');
+      let accTags = [];
       this.props.tags.forEach(function (tag, index, tagsArray){
-        tagsArray[index] = tag.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+        tag = tag.replace(/^\s\s*/, "").replace(/\s\s*$/, "");
+        if (/^[a-z0-9\+\.#-]*$/.test(tag) && tag != '') {
+          accTags.push(tag);
+        }
       });
+      this.props.tags = accTags;
       done();
     }.bind(this));
   },
